@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>
+
+    </title>
+    <link rel="stylesheet" href="../base.css">
+</head>
+
+<body>
+    <script>
+        const names = ['rob', 'trin', 'roovi',];
+
+        console.log(names[0]);
+        console.log(names.length);
+        console.log(names[names.length - 1]);
+
+        const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+        //Mutation Method - does change the original data
+        // const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        // when you want to use mutation method and NOT mutate the original array
+        // take a copy of it
+        const numbersReversed = [...numbers].reverse();
+        console.log(numbersReversed);
+        //numbers.reverse();
+        console.log(numbers);
+        //Immutable - Doesnt change the original data
+        const pizzSlice = numbers.slice(2, 4);
+        console.log(pizzSlice);
+        console.log(numbers);
+
+        names.push('lux');
+        console.log(names);
+
+        const names2 = [...names, 'hollah'];
+        names.unshift('neiko');
+
+        const names3 = ['neiko', ...names];
+        console.log(names3);
+
+        console.log(numbers);
+        numbers.splice(3, 2);
+        console.log(numbers);
+
+        const games = ['zelda', 'Metroid', 'Smash', 'Madden'];
+
+        const newGames = [
+            ...games.slice(0, 2),
+            '2K',
+            ...games.slice(2)
+        ];
+        console.log(newGames);
+
+        const newGames2 = [
+            ...newGames.slice(0, 3),
+            ...newGames.slice(4)
+        ];
+        console.log(newGames2);
+
+        //
+        const comments = [
+            { text: 'Cool cool', id: 123 },
+            { text: 'Saying stuff', id: 223 },
+            { text: 'New stuff here', id: 323 },
+            { text: 'what what number four', id: 423 },
+        ];
+
+        function deleteComment(id, comments) {
+            //first find index in array
+            const commentIndex = comments.findIndex(comment => comment.id === id);
+            //make new array
+            return [
+                ...comments.slice(0, commentIndex),
+                ...comments.slice(commentIndex + 1)
+
+            ];
+            //return new array
+        };
+
+        const trinIndex = names.findIndex(name => name === 'trin');
+        const newNamesWithOutTrin = [
+            ...names.slice(0, trinIndex),
+            ...names.slice(trinIndex + 1)
+        ];
+
+        console.log(newNamesWithOutTrin);
+
+        // console.log(trinIndex);
+        // console.log(names[trinIndex]);
+
+
+    </script>
+</body>
+
+</html>

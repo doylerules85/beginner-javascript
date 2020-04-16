@@ -9,27 +9,144 @@
 </head>
 
 <body>
-  * empty array
-  * empty object
-  * 1
-  * -10
+  <h2>truthy values</h2>
   * full string
+  * -10
+  * 1
   * a string of "0"
+
+  <h2>falsy values</h2>
   * 0
   * undefined variable
   * Variable set to null
   * a variable set to `"hello" - 10` NaN
   * empty string
+  * empty array
+  * empty object
 
   <script>
 
     function slugify(sentence, lowercase) {
       let slug = sentence.replace(/\s/g, '-');
+      // if you are lowercasing 
       if (lowercase) {
         return slug.toLowerCase();
       }
+      // if not return function
       return slug;
     }
+
+    const name = 'rob';
+    const last = 'doy';
+
+    if (name === 'trin' || (name === 'rob' && last === 'doy')) {
+      console.log('Coool Name!');
+    }
+    const isAwesomeName = 'robinhood'.includes(name);
+    if (isAwesomeName) {
+      console.log('thats super cool name');
+    }
+
+    function nameIsAwesome(name) {
+      return 'robinhood'.includes(name);
+    }
+
+    if (nameIsAwesome('rob')) {
+      console.log('rob is robinhood!');
+
+    }
+
+    const dog = 'roovi';
+
+    if (dog) {
+      console.log('you have a dog');
+    } else {
+      console.log('no dog!')
+    }
+
+    let score = {};
+
+    if (score.length) {
+      console.log('there is a score')
+    } else {
+      console.log('no score!');
+    }
+
+    const values = [[], {}, 1, 2, 3, 4, '', 'full string', ' ', undefined, NaN, null];
+
+    console.group('truthy or falsy values');
+    values.forEach(value => {
+      if (value) {
+        console.log(value, 'is truthy');
+      } else {
+        console.log(value, 'is falsy');
+      }
+    });
+    console.groupEnd;
+
+    console.clear();
+
+    const isCool = true;
+
+    if (!isCool) {
+      console.log('not cool')
+    }
+
+    // ternary
+    const count = 1000;
+    // let word;
+    // if (count === 1) {
+    //   word = 'item';
+
+    // } else {
+    //   word = 'items';
+    // }
+    const word = count === 1 ? 'item' : 'items';
+
+    const sentence = `you have ${count} item${count === 1 ? '' : 's'} in your cart`;
+    console.log(sentence);
+
+    function showAdminBar() {
+      console.log('show admin bar');
+    }
+
+    const isAdmin = true;
+
+    // isAdmin ? showAdminBar() : null;
+
+    // AND AND TRICK
+    function check1() {
+      console.log('Running check 1');
+      return true;
+    }
+
+    function check2() {
+      console.log('Running check 2');
+      return false;
+    }
+
+    function check3() {
+      console.log('Running check 3');
+      return true;
+    }
+
+    if (check1() && check2() && check3()) {
+      console.log('all checks passed!');
+    }
+
+    // isAdmin ? showAdminBar() : null;
+    isAdmin && showAdminBar();
+
+    // block list 
+    if (isAdmin) { showAdminBar(); }
+
+      // function slugify(sentence, lowercase) {
+      //   let slug = sentence.replace(/\s/g, '-');
+      //   if (lowercase) {
+      //     return slug.toLowerCase();
+      //   }
+      //   return slug;
+      // }
 
   </script>
 </body>

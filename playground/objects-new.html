@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="../base.css">
+</head>
+
+<body>
+    <input type="text" name="first" value="wes">
+
+    <script src="https://unpkg.com/lodash"></script>
+    <script>
+        let name1 = 'rob';
+        let name2 = 'rob';
+
+        console.log(name1 === name2);
+        // update name1 to be what is name2
+        name1 = 'trin';
+        console.log(name1 === name2);
+        name1 = name2;
+        console.log(name1 === name2);
+        name2 = name1;
+        name2 = 'trin';
+
+        const person1 = {
+            first: 'rob',
+            last: 'doyle',
+            clothing: {
+                shirts: 10,
+                pants: 2
+            }
+        };
+
+        const person2 = {
+            first: 'rob',
+            last: 'doyle'
+        };
+
+        // const person3 = person1;
+        // person3.first = 'Roovi';
+        // console.log(person3.first);
+        // console.log(person1.first);
+        // const person3 = { ...person1 };
+        const person3 = _.cloneDeep(person1);
+        person3.first = 'Roovi';
+
+        person3.clothing.shirts = 100;
+
+        const meatInventory = {
+            bacon: 2,
+            sausage: 3,
+            oyster: 10,
+        };
+
+        const veggieInventory = {
+            lettuce: 5,
+            tomatoes: 3,
+            oyster: 15,
+        };
+
+        const inventory = {
+            ...meatInventory,
+            ...veggieInventory,
+            fries: 100
+        };
+
+        function doStuff(data) {
+            data = 'something else';
+            console.log(data);
+        };
+
+        function doStuff2(data) {
+            data.tomatoes = 1000000000;
+            console.log(data);
+        };
+
+        doStuff2(inventory);
+
+        doStuff(name1);
+
+
+    </script>
+</body>
+
+</html>

@@ -1,50 +1,41 @@
 // const age = 100;
 
-// function go() {
+// function go(){
 //   const myAge = 200;
-//   const hair = 'blonde';
+//   const hair = 'brown';
+//   console.log(hair);
 //   console.log(age);
 //   console.log(myAge);
-//   console.log(hair);
-// }
+// };
 
 // go();
-/* eslint-disable*/
+/* eslint-disable */
 
-// function isCool(name) {
-//   if (name === 'wes') {
-//     var cool = true;
-//   }
+// function isCool(name){
+//   let cool;
+//   if (name === 'rob') {
+//     cool = true;
+//   };
 //   console.log(cool);
 //   return cool;
 // }
 
-// for(let i = 0; i < 10; i++) {
-//   console.log(i);
-// }
+const dog = 'roovi';
 
-
-const dog = 'snickers';
-
-function logDog(dog) {
+function logDog(dog){
   console.log(dog);
 }
 
-function go() {
-  const dog = 'sunny';
-  logDog('sunny');
+function go(){
+  const dog = 'ruger';
+  logDog(dog);
 }
 
-go();
+go(); 
 
-function yell() {
+function sayHi(name){
+function yell(){
   console.log(name.toUpperCase())
 }
-
-function sayHi(name) {
-
-  yell();
-}
-
-
 yell();
+}

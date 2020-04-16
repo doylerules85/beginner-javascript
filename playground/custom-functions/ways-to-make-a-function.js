@@ -14,65 +14,67 @@
 
 /* eslint-disable */
 const inchToCM = inches => inches * 2.54;
-
-// function add(a, b = 3) {
-//   const total = a + b;
-//   return total;
-// }
-
-// const add = (a, b = 3) => a + b;
+ 
+const add = (a, b = 3) => a + b;
 
 // returning an object
 
-// function makeABaby(first, last) {
+// function makeABaby(first, last){
+
 //   const baby = {
 //     name: `${first} ${last}`,
-//     age: 0
+//     age: 1
 //   }
 //   return baby;
 // }
 
-const makeABaby = (first, last) => ({ name: `${first} ${last}`, age: 0 });
+const makeABaby = (first, last) => ({ name: `${first} ${last}`, age: 1 });
 
+//IIFE
+//Immediately Invoked Function Expression
 
-// IIFE
-// Immediately Invoked Function Expression
+// (function(){
+//   console.log('Running the anon function');
+//   return 'You are kewl';
 
-(function(age) {
-  return `You are cool and age ${age}`;
-})(10);
+// })();
 
-// Methods!!!
-const wes = {
-  name: 'Westopher Bos',
-  // Method!
-  sayHi: function() {
-    console.log(`Hey ${this.name}`);
-    return 'Hey Wes';
+(function(age){
+  console.log('Running the anon function');
+  return `You are kewl ${age}`;
+
+})();
+
+//METHODS
+const rob = {
+  name: 'rob doy',
+  sayHi: function(){
+    console.log('Hey Rob');
+    return 'Hey Rob';
   },
-  // Short hand Method
-  yellHi() {
-    console.log('HEY WESSSSS');
+  //short hand
+  yellHi(){
+    console.log('WAZ UP!');
   },
-  // Arrow function
-  wisperHi: () => {
-    console.log('hii wesss im a mouse');
+  //arrow function
+  whisperHi: () => {
+    console.log('thisss isss a whissssper...');
   }
-}
+};
 
-// Callback Functions
-// Click Callback
+//Callback Functions
+//Click Callback
+
 const button = document.querySelector('.clickMe');
 
-function handleClick() {
-  console.log('Great Clicking!!');
-}
+button.addEventListener('click',rob.yellHi);
 
-button.addEventListener('click', function() {
-  console.log('NIce Job!!!');
-});
+// Timer Functions
 
-// Timer Callback
+setTimeout(function(){
+  console.log('timeout now!')
+},1000);
+
 setTimeout(() => {
-  console.log('DONE! Time to eat!');
-}, 1000);
+  console.log('timeout arrow now!')
+},2000);
